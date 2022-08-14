@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon-16.png') }}">
+    <!-- stylesheets -->
     <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }} ">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hover.min.css') }}">
+    <!-- flask moment -->
+    {{ moment.include_moment() }}
     <title>{% block title %} {% endblock %} | BlogTitle</title>
 </head>
 
 <body>
-
+    
     <!-- flash message -->
     {% if flash_type == 'success' %}
-    <div class="flash-message flash-success">
+    <div id="flash" class="flash-message flash-success">
     {% elif flash_type == 'denger' %}
-    <div class="flash-message flash-denger">
+    <div id="flash" class="flash-message flash-denger">
     {% else %}
-    <div class="flash-message flash-warning">
+    <div id="flash" class="flash-message flash-warning">
     {% endif %}
         <div class="d-flex justify-content-between">
             <div class="message-text">{{ flash_message }}</div>
-            <a href=""><img class="cross" src="{{ url_for('static', filename='assets/x-lg.svg') }}" alt=""></a>
+            <a href=""><img id="flash_close" class="cross" src="{{ url_for('static', filename='assets/x-lg.svg') }}" alt=""></a>
         </div>
     </div>
     
-
 
     <!-- section 1 -->
     <section id="section1">
