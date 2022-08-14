@@ -1,0 +1,214 @@
+/* custom style eliments */
+
+/* root */
+
+:root {
+    --white: #ffffff;
+    --black: #1e1e1e;
+    --primary-light: #1e1e1e;
+    --primary-dark: #1e1e1e;
+    --secondary-light: #1e1e1e;
+    --secondary-dark: #1e1e1e;
+}
+
+/* common */
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    color: unset;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.list-group .list-group-item {
+    border: 0;
+}
+
+.badge {
+    text-transform: capitalize;
+}
+
+.badge {
+    border-radius: 0;
+}
+
+/* button */
+
+.btn {
+    border-radius: 0;
+}
+
+/* flash message */
+
+.flash-message {
+    /* display: none; */
+    background-color: white;
+    z-index: 10;
+    padding: 20px;
+    border: 0;
+    border-radius: 0;
+    min-height: 50px;
+    max-width: 350px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    text-transform: capitalize;
+}
+
+.flash-message .message-text {
+    margin-right: 20px;
+}
+
+.flash-message .cross {
+    border: 1px solid #1e1e1e30;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.flash-success {
+    background-color: #D4EFDF;
+    border-left: 5px solid green;
+}
+
+.flash-denger {
+    background-color: #FADBD8;
+    border-left: 5px solid red;
+}
+
+.flash-warning {
+    background-color: #FCF3CF;
+    border-left: 5px solid gold;
+}
+
+
+/* card */
+
+.card {
+    margin-bottom: 25px;
+    border-radius: 0;
+}
+
+.card-big {
+    background-color: #F8F9F9;
+    border: 0;
+    border-radius: 0;
+}
+
+.card-big .card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-big .card-footer {
+    padding: 0;
+    padding-top: 20px;
+    border: 0;
+    background-color: unset;
+}
+
+.card-big .like {
+    border: 1px solid var(--black);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.card-big .card-img-top {
+    height: 250px;
+    width: 100%;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.card-big .badge {
+    background-color: unset;
+    color: black;
+    font-weight: normal;
+    border: 1px solid black;
+}
+
+.account .card {
+    background-color: #F8F9F9;
+    border: 0;
+}
+
+/* .post:hover .card-img-top{
+    transform: scale(110%);
+    overflow: hidden;
+} */
+/* .post:hover .card-big {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+} */
+
+/* pagination */
+.pagination .page-item .page-link{
+    border-radius: 0;
+}
+
+/* navbar */
+.navbar {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.nav-item {
+    margin-left: 20px;
+    text-transform: capitalize;
+}
+
+.navbar .login {
+    margin-left: 30px;
+}
+
+
+/* landing */
+
+/* section1 */
+
+.search-bar {
+    border: 1px solid var(--black);
+}
+
+.search-bar * {
+    border: none;
+}
+
+.search-bar input:focus {
+    box-shadow: none;
+    background-color: #F8F9F9;
+}
+
+.search-bar .input-group-text {
+    background-color: unset;
+}
+
+/* section2 */
+
+/* section3 */
+
+/* section4 */
+
+/* footer */
+
+#footer {
+    background-color: #F2F3F4;
+    padding: 2em 0;
+}
+
+#footer .copyright {
+    border-top: 1px solid var(--black);
+}

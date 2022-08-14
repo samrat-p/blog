@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.min.css') }} ">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+        body {
+            font-family: 'Abel', sans-serif;
+            padding: 5em 0;
+        }
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: 70vh;
+            z-index: 0;
+            padding-top: 3em;
+        }
+
+        .text {
+            z-index: 10;
+            text-align: center;
+        }
+
+        .btn {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: .5em 3em;
+            background-color: green;
+            border-radius: 20px;
+            color: white;
+        }
+
+        h1 {
+            text-transform: uppercase;
+        }
+
+        h6 {
+            text-transform: capitalize;
+        }
+    </style>
+    <title>⚠️ error</title>
+</head>
+
+<body>
+    <div class="position-relative">
+        <div class="text position-absolute top-0 start-50 translate-middle-x">
+            <h1>Error {{ error_code }}</h1>
+            <h6>{{ error_message }}</h6>
+        </div>
+    </div>
+
+
+    <img src=" {{ url_for('static', filename='assets/error.gif') }} " alt="">
+
+    <div class="position-relative">
+        <div class="text position-absolute bottom-0 start-50 translate-middle-x">
+            <a href=" {{ url_for('general.index') }} ">
+                <input class="btn" type="submit" value="← home">
+            </a>
+        </div>
+    </div>
+
+
+    <script src=" {{ url_for('static', filename='js/bootstrap.min.js') }} "></script>
+</body>
+
+</html>

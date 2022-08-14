@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }} ">
+    <title>{% block title %} {% endblock %} | BlogTitle</title>
+</head>
+
+<body>
+
+    <!-- flash message -->
+    {% if flash_type == 'success' %}
+    <div class="flash-message flash-success">
+    {% elif flash_type == 'denger' %}
+    <div class="flash-message flash-denger">
+    {% else %}
+    <div class="flash-message flash-warning">
+    {% endif %}
+        <div class="d-flex justify-content-between">
+            <div class="message-text">{{ flash_message }}</div>
+            <a href=""><img class="cross" src="{{ url_for('static', filename='assets/x-lg.svg') }}" alt=""></a>
+        </div>
+    </div>
+    
+
+
+    <!-- section 1 -->
+    <section id="section1">
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ url_for('general.index') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Account</a>
+                        </li>
+                    </ul>
+                    <form class="login" action="">
+                        <button type="button" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-4">
+                    <h1>Blog Title</h1>
+                </div>
+                <div class="col-md-4">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li>About</li>
+                        <li>Privacy policy</li>
+                        <li>Contact Us</li>
+                        <li>Feedback</li>
+                        <li>Request Article</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><strong>Email:</strong> misuvasish114 AT gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright py-2">
+                copyright 2022 | all right reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src=" {{ url_for('static', filename='js/bootstrap.min.js') }} "></script>
+    <script src=" {{ url_for('static', filename='js/script.js') }} "></script>
+</body>
+
+</html>
