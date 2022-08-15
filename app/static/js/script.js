@@ -8,7 +8,8 @@ setInterval(() => {
 }, 3000);
 
 // flash message close button
-// BUG: window got refreshed after clicking the button
-flash_close.addEventListener("click", function close_div() {
-    flash_close.style.display = "none";
+flash_close.addEventListener("click", function(event) {
+    flash.parentNode.removeChild(flash);
+    // FIX: prevent site from reloading
+    event.preventDefault();
 });
