@@ -2,4 +2,21 @@
 {% block title %} User {% endblock %}
 {% block content %}
 
+<div class="container user-account my-5">
+    <div class="row">
+
+        <!-- sidebar -->
+        <div class="col-md-3 profile p-4">
+            <img class="mb-2 profile-picture" src="https://avatars.githubusercontent.com/u/64000509?v=4" alt="">
+            <h3 class="mb-2">SUVASISH DAS</h3>
+            <div class="mb-2">@suvasish114</div>
+        </div>
+        <!-- content -->
+        <div class="col-md-9 content position-relative">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <img class="empty" src="{{ url_for('static', filename='assets/empty_box.webp') }}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

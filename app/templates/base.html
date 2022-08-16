@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon-16.png') }}">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
     <!-- stylesheets -->
     <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }} ">
@@ -16,21 +22,28 @@
 </head>
 
 <body>
-    
+
+    <!-- loading screen -->
+    <!-- <div class="load">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <span class="mb-3">Loading...</span>
+        </div>
+    </div> -->
+
     <!-- flash message -->
-    {% if flash_type == 'success' %}
-    <div id="flash" class="flash-message flash-success">
-    {% elif flash_type == 'denger' %}
-    <div id="flash" class="flash-message flash-denger">
-    {% else %}
+    {% for message in get_flashed_messages() %}
     <div id="flash" class="flash-message flash-warning">
-    {% endif %}
         <div class="d-flex justify-content-between">
-            <div class="message-text">{{ flash_message }}</div>
-            <a href=""><img id="flash_close" class="cross" src="{{ url_for('static', filename='assets/x-lg.svg') }}" alt=""></a>
+            <div class="message-text">{{ message }}</div>
+            <a href=""><img id="flash_close" class="cross" src="{{ url_for('static', filename='assets/x-lg.svg') }}"
+                    alt=""></a>
         </div>
     </div>
-    
+    {% endfor %}
+
 
     <!-- section 1 -->
     <section id="section1">
@@ -47,7 +60,8 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('general.index') }}">Home</a>
+                            <a class="nav-link active" aria-current="page"
+                                href="{{ url_for('general.index') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -65,33 +79,62 @@
                 </div>
             </div>
         </nav>
-
-        {% block content %}
-        {% endblock %}
+        
+        {% block content %} {% endblock %}
 
     </section>
 
     <footer id="footer">
         <div class="container">
             <div class="row py-5">
-                <div class="col-md-4">
-                    <h1>Blog Title</h1>
+                <div class="col-md-4 my-3">
+                    <h2 class="mb-3">Designer.com</h2>
+                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, id
+                        quibusdam voluptates iure iste explicabo?</p>
+                    <div class="mb-3">
+                        <img class="social" src="{{ url_for('static', filename='assets/twitter.svg') }}" alt="">
+                        <img class="social" src="{{ url_for('static', filename='assets/facebook.svg') }}" alt="">
+                        <img class="social" src="{{ url_for('static', filename='assets/pinterest.svg') }}" alt="">
+                        <img class="social" src="{{ url_for('static', filename='assets/github.svg') }}" alt="">
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Navigation</h5>
-                    <ul>
-                        <li>About</li>
-                        <li>Privacy policy</li>
-                        <li>Contact Us</li>
-                        <li>Feedback</li>
-                        <li>Request Article</li>
-                    </ul>
+
+                <div class="col-md-1"></div>
+                <div class="col-md-2 my-3">
+                    <h5 class="mb-3">Navigation</h5>
+                    <div class="mb-3">
+                        <div>about</div>
+                        <div>term and conditions</div>
+                        <div>contact</div>
+                        <div>request article</div>
+                        <div>report a bug</div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <ul>
-                        <li><strong>Email:</strong> misuvasish114 AT gmail.com</li>
-                    </ul>
+                <div class="col-md-2 my-3">
+                    <h5 class="mb-3">Blog</h5>
+                    <div class="mb-3">
+                        <div>Web development</div>
+                        <div>Android</div>
+                        <div>Blockchain</div>
+                        <div>Neuroscience</div>
+                    </div>
+                </div>
+
+                <!-- subscribe -->
+                <div class="col-md-3 my-3">
+                    <h5 class="mb-3">Subscribe</h5>
+                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia tenetur, unde
+                        numquam rem consequatur non!</p>
+                    <form class="input-group mb-4 subscribe" action="/" method="POST">
+                        {{ form.hidden_tag() }}
+                        {{ form.email( class='form-control', placeholder='Subscribe') }}
+                        {{ form.submit( class='input-group-text', id='basic-addon2') }}
+                        <!-- <input type="text" class="form-control" placeholder="Subscribe"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <img src="{{ url_for('static', filename='assets/envelope.svg') }}" alt="">
+                                </span> -->
+                    </form>
                 </div>
             </div>
             <div class="copyright py-2">
