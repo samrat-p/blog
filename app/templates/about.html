@@ -1,1 +1,16 @@
-about
+{% extends "base.html" %}
+{% block title %} about {% endblock %}
+{% block content %}
+<div class="static">
+    TODO: about page to be developed
+</div>
+<div class="static">
+    say hi
+    <form method="POST">
+        <input type="text" placeholder="full name"> <br>
+        <input type="text" placeholder="email address"> <br>
+        <textarea name="message" id="sayhi" cols="30" rows="10" placeholder="message"></textarea> <br>
+        <input type="submit" value="submit">
+    </form>
+</div>
+{% endblock %}

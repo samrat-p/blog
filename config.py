@@ -8,6 +8,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # common configurations
 class Config:
     SECRET_KEY = "secret_key_goes_here"
+    # more configurations goes hereß
 
     @staticmethod
     def init_app(app):

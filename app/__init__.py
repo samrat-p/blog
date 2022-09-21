@@ -17,10 +17,10 @@ def create_app(config_name):
 
     moment.init_app(app)                                # register flask_moment
 
-    from .auth import authentication_blueprint          # registering blurprints to the instance
-    from .general import general_blueprint
-    app.register_blueprint(authentication_blueprint)
-    app.register_blueprint(general_blueprint)
+    from .auth import auth_blueprint          # registering blurprints to the instance
+    from .main import main_blueprint
+    app.register_blueprint(auth_blueprint)
+    app.register_blueprint(main_blueprint)
 
     # other configuration binding goes here
     

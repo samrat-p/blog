@@ -1,12 +1,12 @@
 # custom error handlers
 
 from flask import render_template
-from . import general_blueprint
+from . import main_blueprint
 
 # TODO: dynamic error pages handle
-@general_blueprint.app_errorhandler(403)        # URL NOT FOUND
-@general_blueprint.app_errorhandler(404)        # URL NOT FOUND
-@general_blueprint.app_errorhandler(405)        # METHOD IS NOT ALLOWDED
+@main_blueprint.app_errorhandler(403)        # URL NOT FOUND
+@main_blueprint.app_errorhandler(404)        # URL NOT FOUND
+@main_blueprint.app_errorhandler(405)        # METHOD IS NOT ALLOWDED
 def error(e):
     error_code, error_message = str(e).split(":")
     return render_template('error.html',
