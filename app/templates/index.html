@@ -5,37 +5,46 @@
 <!-- subscribe -->
 <div class="static">
     <form method="POST">
-        <input type="text" placeholder="email address">
-        <input type="submit" value="subscribe">
+        {{ subscribe.hidden_tag() }}
+        {{ subscribe.name(placeholder='Full Name') }}
+        {{ subscribe.email(placeholder='Email Address') }}
+        {{ subscribe.submit(class='btn') }}
     </form>
 </div>
 
 <!-- search -->
 <div class="static">
     <form method="POST">
-        <input type="text" placeholder="search posts">
-        <input type="submit" value="search">
+        {{ search.hidden_tag() }}
+        {{ search.search(placeholder='Enter Keywords') }}
+        {{ search.submit(class='btn') }}
     </form>
 </div>
 
 <!-- used tags -->
 <div>
     <h3>Frequent Tags</h3>
-    <a href="">[web development]</a>
-    <a href="">[android]</a>
-    <a href="">[block chain]</a>
-    <a href="">[neuroscience]</a>
+    <a class="tags" href="">web development</a>
+    <a class="tags" href="">android</a>
+    <a class="tags" href="">block chain</a>
+    <a class="tags" href="">neuroscience</a>
 </div>
 
 <!-- blog post -->
 <h3>Frequent Posts</h3>
-<div class="card">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quod commodi mollitia consectetur accusantium beatae eveniet iure asperiores at soluta vel itaque delectus ullam autem, laudantium odit suscipit voluptas id?</p>
-    <a href=""><button>read more</button></a>
-</div>
-<div class="card">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum in eos consequuntur beatae, adipisci quae quis molestiae vitae quasi nesciunt sed reiciendis! Sapiente nobis impedit laboriosam blanditiis voluptate ipsa numquam!</p>
-    <a href=""><button>read more</button></a>
+<div class="blogposts">
+    <div class="card">
+        <img src="https://psgroup.in/blog/wp-content/uploads/2019/01/Kolkata_City_skyline_from_Hoogly_bridge.jpg"
+            alt="">
+        <div class="card-body">
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quod commodi mollitia consectetur
+                accusantium beatae eveniet iure asperiores at soluta vel itaque delectus ullam autem, laudantium odit
+                suscipit voluptas id?</p>
+                <a class="tags" href="">web development</a><br><br>
+            <a href=""><button class="btn">read more</button></a>
+        </div>
+    </div>
 </div>
 
 <br>

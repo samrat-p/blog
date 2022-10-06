@@ -17,8 +17,9 @@
 <div class="static">
     post comment <br>
     <form method="POST">
-        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="comment"></textarea><br>
-        <input type="submit" value="post">
+        {{ comment.hidden_tag() }}
+        {{ comment.comment(placeholder='Comment') }} <br>
+        {{ comment.submit(class='btn') }}
     </form>
 </div>
 

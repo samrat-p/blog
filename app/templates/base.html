@@ -4,41 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }} ">
     <title>{% block title %} {% endblock %} | SiteName</title>
-    <style>
-        body{
-            margin: 1em 10em;
-            background-color: #EBF5FB;
-        }
-        .dynamic {
-            margin: 10px 0;
-            border: 1px dashed red;
-            padding: 10px;
-            background-color: #FDEDEC;
-        }
-        .static{
-            margin: 10px 0;
-            border: 1px dashed green;
-            padding: 10px;
-            background-color: #E9F7EF;
-        }
-        .card{
-            margin: 10px 0;
-            padding: 5px 20px;
-            border: 1px solid black;
-        }
-    </style>
 </head>
 <body>
+    {% for message in get_flashed_messages() %}
+    <div id="flash" class="flash">
+        <div class="message">{{ message }}</div>
+        <a id="flash_close" href="">╳</a>
+    </div>
+    {% endfor %}
+
     <!-- TODO: navbar -->
     <div>
-        <a href="{{ url_for('main.index') }}">[home]</a>
-        <a href="{{ url_for('main.about') }}">[about]</a>
-        <a href="#">[feedback]</a>
-        <a href="{{ url_for('auth.signup') }}">[create account]</a>
-        <a href="{{ url_for('auth.login') }}"><button>login</button></a>
-        <a href="#"><button>logout</button></a>
+        <a class="navlink" href="{{ url_for('main.index') }}">🏠 home</a>
+        <a class="navlink" href="{{ url_for('main.about') }}">👤 about</a>
+        <a class="navlink" href="#">✍️ feedback</a>
+        <a href="{{ url_for('auth.login') }}"><button class="btn">login</button></a>
+        <a href="#"><button class="btn">logout</button></a>
     </div>
+    <hr>
 
     <!-- dynamic conent goes -->
     <div class="dynamic">
@@ -46,8 +31,10 @@
     </div>
 
     <!-- TODO: footer -->
+    <hr>
     <footer>
-        footer
+        Copyright 2022 | all right reserved
     </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

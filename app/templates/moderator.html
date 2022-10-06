@@ -2,4 +2,23 @@
 {% block title %} Maintainers {% endblock %}
 {% block content %}
 
+<h1>Moderator Page</h1>
+<table>
+    Subscribe
+    <tr>
+        <th>#</th>
+        <th>Full Name</th>
+        <th>Email Id</th>
+        <th>Date</th>
+    </tr>
+    {% for subscriber in subscribers %}
+    <tr>
+        <td>{{ subscriber.id }}</td>
+        <td>{{ subscriber.name }}</td>
+        <td>{{ subscriber.email }}</td>
+        <td>{{ subscriber.date_subscribed }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}
