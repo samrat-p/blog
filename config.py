@@ -11,8 +11,8 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # client information provided by authorization server
-    CLIENT_ID = "1025265011743-eg1h7lkq6ddrkfu5761pk04mcogc60kf.apps.googleusercontent.com"
-    CLIENT_SECRET = "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"
+    CLIENT_ID = "client_id_goes_here"
+    CLIENT_SECRET = "client_secret_goes_here"
 
     @staticmethod
     def init_app(app):
